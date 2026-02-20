@@ -8,17 +8,42 @@
 </head>
 <body>
   <div class="login">
-    <form class="login-form" action="Si.html">
-            <p style="text-align: right;">
-      </p>
+    <form class="login-form" id="loginForm">
       <h2>Iniciar Sesión</h2>
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
+
+      <input id="usuario" type="text" placeholder="Usuario" required>
+      <input id="password" type="password" placeholder="Contraseña" required>
+
+      <p id="errorMsg" style="display:none; color:red; margin: 8px 0;">
+        Usuario o contraseña incorrectos.
+      </p>
+
       <a href="signin.html">Crear cuenta</a>
       <button type="submit">Entrar</button>
-
     </form>
-
   </div>
+
+  <script>
+    const USER_OK = "user";
+    const PASS_OK = "1234";
+
+    const form = document.getElementById("loginForm");
+    const userInput = document.getElementById("usuario");
+    const passInput = document.getElementById("password");
+    const errorMsg = document.getElementById("errorMsg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); 
+
+      const u = userInput.value.trim();
+      const p = passInput.value;
+
+      if (u === USER_OK && p === PASS_OK) {
+        window.location.href = "homepage.html";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>

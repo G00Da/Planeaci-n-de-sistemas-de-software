@@ -3,30 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Registro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="login">
-    <form class="login-form" action="LOGIN.html">
+    <form class="login-form" id="registroForm">
       <h2>Crear Cuenta</h2>
-      <input type="text" placeholder="Nombre" required>
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
-      <input type="password" placeholder="Confirmar Contraseña" required>
+
+      <input id="nombre" type="text" placeholder="Nombre" required>
+      <input id="usuario" type="text" placeholder="Usuario" required>
+      <input id="password" type="password" placeholder="Contraseña" required>
+      <input id="confirmar" type="password" placeholder="Confirmar Contraseña" required>
+
+      <p id="errorMsg" style="display:none; color:red;">
+        Las contraseñas no coinciden.
+      </p>
+
       <button type="submit">Crear Cuenta</button>
     </form>
   </div>
 
   <footer class="footer">
     <p>
-      <a>
-       @ Planeación de sistemas de software (Gpo 107) | A01276941
-      </a>
-    </p>
+      @ Planeación de sistemas de software (Gpo 107) | A01276941
     </p>
   </footer>
+
+  <script>
+    const form = document.getElementById("registroForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const usuario = document.getElementById("usuario").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmar = document.getElementById("confirmar").value;
+
+      if (password !== confirmar) {
+        document.getElementById("errorMsg").style.display = "block";
+        return;
+      }
+
+      const nuevoUsuario = {
+        nombre: nombre,
+        usuario: usuario,
+        password: password
+      };
+
+      console.log("Usuario registrado:");
+      console.log(JSON.stringify(nuevoUsuario, null, 2));
+
+      localStorage.setItem("usuarioRegistrado", JSON.stringify(nuevoUsuario));
+
+      alert("Registro exitoso. Ahora inicia sesión.");
+
+      window.location.href = "LOGIN.html";
+    });
+  </script>
 
 </body>
 </html>

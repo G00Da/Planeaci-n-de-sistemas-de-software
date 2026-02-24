@@ -165,3 +165,146 @@
   padding: 15px 0;
   font-size: 14px;
 }
+
+.topbar{
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 18px;
+  gap:16px;
+}
+
+.brand a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.navlinks{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.navlinks a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  opacity:.9;
+}
+
+.navlinks a:hover{ opacity:1; }
+
+.userbox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+}
+
+.btn-logout{
+  background:#00ffcc;
+  border:none;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.footer{
+  margin-top:40px;
+  padding:16px;
+  text-align:center;
+  background:#111;
+  color:#fff;
+}
+
+/* ===== Auth (Login/Signin) ===== */
+.auth-bg{
+  min-height: 100vh;
+}
+
+/* Centrado */
+.login-container{
+  min-height: calc(100vh - 120px); /* deja espacio para footer */
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Tarjeta */
+.login-card{
+  width: min(420px, 92vw);
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+/* Título */
+.login-title{
+  margin: 0 0 18px;
+  font-size: 38px;
+  text-align: center;
+  font-weight: 800;
+  color: #1f2b33;
+}
+
+/* Form en columna */
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs */
+.login-form input{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-size: 16px;
+  outline: none;
+}
+
+.login-form input:focus{
+  border-color: rgba(0,0,0,0.45);
+}
+
+/* Error */
+.error-msg{
+  margin: 6px 0 0;
+  color: #c30000;
+  font-weight: 700;
+}
+
+/* Botón */
+.btn-primary{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.auth-link{
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-link:hover{
+  text-decoration: underline;
+}
+
+.footer{
+  padding: 16px;
+  text-align: center;
+}

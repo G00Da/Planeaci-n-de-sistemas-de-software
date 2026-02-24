@@ -1,0 +1,23 @@
+{
+  "name": "planeaci-n-de-sistemas-de-software",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G00Da/Planeaci-n-de-sistemas-de-software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/G00Da/Planeaci-n-de-sistemas-de-software/issues"
+  },
+  "homepage": "https://github.com/G00Da/Planeaci-n-de-sistemas-de-software#readme",
+  "description": "",
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}

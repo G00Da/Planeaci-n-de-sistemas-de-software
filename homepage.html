@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav>
-    <a href="homepage.html">Home</a>
-    <a href="page1.html">Page 1</a>
-    <a href="page2.html">Page 2</a>
-    <a href="page3.html">Page 3</a>
-    <a href="page4.html">Page 4</a>
-  </nav>
+  <div id="header-slot"></div>
 
-  <div class="contenido">
-    <h1>Hola 👋</h1>
-    <p>Bienvenido a la homepage</p>
-  </div>
+  <main class="contenido-home">
+    <section class="hero">
+      <h1>Bienvenido a Mi Sitio</h1>
+      <p>
+        Este es el homepage principal del proyecto.
+        Aquí puedes navegar entre las páginas interiores.
+      </p>
 
+      <a href="page1.html" class="btn-principal">
+        Ir a Page 1
+      </a>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
-<footer class="bottom-bar">
-  © A01276941 | Daniel González Orta
-</footer>

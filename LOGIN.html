@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="login">
-    <form class="login-form" action="homepage.html">
-            <p style="text-align: right;">
-      </p>
-      <h2>Iniciar Sesión</h2>
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
-      <a href="signin.html">Crear cuenta</a>
-      <button type="submit">Entrar</button>
+<body class="auth-bg">
 
-    </form>
+  <main class="login-container">
+    <section class="login-card">
+      <h2 class="login-title">Iniciar Sesión</h2>
 
-  </div>
+      <form class="login-form" id="loginForm">
+        <input type="text" id="usuario" placeholder="Usuario" autocomplete="username" required />
+        <input type="password" id="password" placeholder="Contraseña" autocomplete="current-password" required />
+
+        <p id="errorMsg" class="error-msg" style="display:none;">
+          Usuario o contraseña incorrectos.
+        </p>
+
+        <button class="btn-primary" type="submit">Entrar</button>
+      </form>
+
+      <a class="auth-link" href="signin.html">Crear cuenta</a>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+  <script src="app.js"></script>
+
+  <script>
+    const USER_OK = "user";
+    const PASS_OK = "1234";
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const u = document.getElementById("usuario").value.trim();
+      const p = document.getElementById("password").value;
+      const error = document.getElementById("errorMsg");
+
+      if (u === USER_OK && p === PASS_OK) {
+        sessionStorage.setItem("token", "token-" + Date.now());
+        sessionStorage.setItem("user", u);
+        window.location.href = "page1.html";
+      } else {
+        error.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>

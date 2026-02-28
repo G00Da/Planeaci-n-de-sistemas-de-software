@@ -11,15 +11,31 @@
   <div id="header-slot"></div>
 
   <main class="contenido">
-    <h1>Page 1</h1>
-    <p>Contenido interno.</p>
+    <section class="card">
+      <h1>Page 1</h1>
+      <p>Esta página consume PokeAPI y muestra nombre + imagen.</p>
+    </section>
+
+    <section class="poke-box">
+      <h2>Pokémon</h2>
+
+      <div class="poke-controls">
+        <input id="pokeInput" type="text" placeholder="Escribe un nombre o ID (pikachu / 25)" />
+        <button id="pokeBtn" type="button">Buscar</button>
+      </div>
+
+      <p id="pokeMsg" class="poke-msg" style="display:none;"></p>
+
+      <div id="pokeResult" class="poke-result" style="display:none;">
+        <img id="pokeImg" alt="" />
+        <h3 id="pokeName"></h3>
+      </div>
+    </section>
   </main>
 
   <div id="footer-slot"></div>
 
   <script src="app.js"></script>
-  <script>
-    requireAuth();
-  </script>
+  <script src="pokemon.js"></script>
 </body>
 </html>

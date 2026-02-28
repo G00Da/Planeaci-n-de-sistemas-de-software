@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="auth-bg">
 
-  <div class="login">
-    <form class="login-form" action="LOGIN.html">
-      <h2>Crear Cuenta</h2>
-      <input type="text" placeholder="Nombre" required>
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
-      <input type="password" placeholder="Confirmar Contraseña" required>
-      <button type="submit">Crear Cuenta</button>
-    </form>
-  </div>
+  <main class="login-container">
+    <section class="login-card">
+      <h2 class="login-title">Crear Cuenta</h2>
 
-  <footer class="footer">
-    <p>
-      <a>
-       @ Planeación de sistemas de software (Gpo 107) | A01276941
-      </a>
-    </p>
-    </p>
-  </footer>
+      <form class="login-form" onsubmit="event.preventDefault(); alert('Solo demo'); window.location.href='LOGIN.html';">
+        <input type="text" placeholder="Nombre" required />
+        <input type="text" placeholder="Usuario" required />
+        <input type="password" placeholder="Contraseña" required />
+        <button class="btn-primary" type="submit">Crear</button>
+      </form>
 
+      <a class="auth-link" href="LOGIN.html">Volver al login</a>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+  <script src="app.js"></script>
 </body>
 </html>

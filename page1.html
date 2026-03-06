@@ -3,32 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page 1</title>
+  <title>Buscar Pokemon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div id="header-slot"></div>
 
   <main class="contenido">
     <section class="card">
-      <h1>Page 1</h1>
-      <p>Esta página consume PokeAPI y muestra nombre + imagen.</p>
+      <h1>Buscar Pokemon</h1>
+      <p>Escribe el nombre o el número de Pokedex y te muestro su informacion.</p>
     </section>
 
-    <section class="poke-box">
-      <h2>Pokémon</h2>
-
-      <div class="poke-controls">
-        <input id="pokeInput" type="text" placeholder="Escribe un nombre o ID (pikachu / 25)" />
-        <button id="pokeBtn" type="button">Buscar</button>
+    <section class="card search-card">
+      <div class="search-row">
+        <input id="searchInput" type="text" placeholder="Ej: pikachu o 25" />
+        <button id="searchBtn" type="button">Buscar</button>
       </div>
+      <p id="searchStatus" class="statusText"></p>
+    </section>
 
-      <p id="pokeMsg" class="poke-msg" style="display:none;"></p>
-
-      <div id="pokeResult" class="poke-result" style="display:none;">
-        <img id="pokeImg" alt="" />
-        <h3 id="pokeName"></h3>
+    <section id="resultCard" class="card poke-result" style="display:none;">
+      <div class="poke-result-top">
+        <div>
+          <h2 id="pokeName" class="poke-title"></h2>
+          <p id="pokeId" class="poke-sub"></p>
+          <div id="pokeTypes" class="poke-types"></div>
+          <p id="pokeExtra" class="poke-extra"></p>
+        </div>
+        <img id="pokeImg" class="poke-img-big" alt="Imagen del Pokémon" />
       </div>
     </section>
   </main>

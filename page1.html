@@ -12,27 +12,47 @@
   <main class="contenido">
     <section class="card">
       <h1>Buscar Pokemon</h1>
-      <p>Escribe el nombre o el número de Pokedex y te muestro su informacion.</p>
+      <p>
+        Puedes buscar por nombre, numero de pokedex o tipo.
+        Ejemplos: pikachu, 25, fire, water, grass.
+      </p>
     </section>
 
     <section class="card search-card">
       <div class="search-row">
-        <input id="searchInput" type="text" placeholder="Ej: pikachu o 25" />
+        <input id="searchInput" type="text" placeholder="Ej: pikachu, 25, fire" />
         <button id="searchBtn" type="button">Buscar</button>
       </div>
       <p id="searchStatus" class="statusText"></p>
     </section>
 
+    <!-- Resultado individual -->
     <section id="resultCard" class="card poke-result" style="display:none;">
       <div class="poke-result-top">
-        <div>
+        <div class="poke-info-left">
           <h2 id="pokeName" class="poke-title"></h2>
           <p id="pokeId" class="poke-sub"></p>
           <div id="pokeTypes" class="poke-types"></div>
           <p id="pokeExtra" class="poke-extra"></p>
+
+          <div class="info-block">
+            <h3>Habilidades</h3>
+            <div id="pokeAbilities" class="poke-abilities"></div>
+          </div>
+
+          <div class="info-block">
+            <h3>Estadisticas</h3>
+            <div id="pokeStats" class="poke-stats"></div>
+          </div>
         </div>
-        <img id="pokeImg" class="poke-img-big" alt="Imagen del Pokémon" />
+
+        <img id="pokeImg" class="poke-img-big" alt="Imagen del Pokemon" />
       </div>
+    </section>
+
+    <section id="typeResultsSection" class="card" style="display:none;">
+      <h2 id="typeTitle">Pokemones por tipo</h2>
+      <div id="typeResultsGrid" class="poke-grid"></div>
     </section>
   </main>
 

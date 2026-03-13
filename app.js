@@ -1,9 +1,7 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   loadHeader();
   loadFooter();
 });
-
 
 async function loadHeader() {
   const headerSlot = document.getElementById("header-slot");
@@ -19,7 +17,6 @@ async function loadHeader() {
 
     const headerHTML = await response.text();
     headerSlot.innerHTML = headerHTML;
-
   } catch (error) {
     console.error("Error cargando header:", error);
   }
@@ -39,8 +36,7 @@ async function loadFooter() {
 
     const footerHTML = await response.text();
     footerSlot.innerHTML = footerHTML;
-
   } catch (error) {
     console.error("Error cargando footer:", error);
   }
-};
+}

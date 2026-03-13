@@ -3,22 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page 2</title>
+  <title>Batalla Pokemon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div id="header-slot"></div>
 
   <main class="contenido">
     <section class="card">
-      <h1>Page 2</h1>
-      <p>Contenido de la página 2.</p>
+      <h1>Batalla Pokemon</h1>
+      <p>Elige dos Pokemon por nombre o numero y avanza la pelea por turnos.</p>
+    </section>
+
+    <section class="card battle-setup">
+      <div class="battle-inputs">
+        <input id="pokemon1Input" type="text" placeholder="Pokemon 1: ej. pikachu o 25" />
+        <input id="pokemon2Input" type="text" placeholder="Pokemon 2: ej. charizard o 6" />
+        <button id="startBattleBtn" type="button">Iniciar batalla</button>
+      </div>
+      <p id="battleStatus" class="statusText"></p>
+    </section>
+
+    <section id="battleArena" class="card battle-arena" style="display:none;">
+      <div class="fighters">
+        <article class="fighter-card">
+          <h2 id="p1Name"></h2>
+          <img id="p1Img" class="fighter-img" alt="Pokemon 1" />
+          <div class="hp-wrap">
+            <div class="hp-bar-bg">
+              <div id="p1HpBar" class="hp-bar"></div>
+            </div>
+            <p id="p1HpText" class="hp-text">100 / 100</p>
+          </div>
+        </article>
+
+        <div class="vs-box">VS</div>
+
+        <article class="fighter-card">
+          <h2 id="p2Name"></h2>
+          <img id="p2Img" class="fighter-img" alt="Pokemon 2" />
+          <div class="hp-wrap">
+            <div class="hp-bar-bg">
+              <div id="p2HpBar" class="hp-bar"></div>
+            </div>
+            <p id="p2HpText" class="hp-text">100 / 100</p>
+          </div>
+        </article>
+      </div>
+
+      <section class="battle-log-box">
+        <h3 id="turnTitle">Turno 1</h3>
+        <div id="battleLog" class="battle-log"></div>
+      </section>
+
+      <div class="battle-actions">
+        <button id="nextTurnBtn" type="button">Siguiente turno</button>
+        <button id="resetBattleBtn" type="button">Reiniciar</button>
+      </div>
+    </section>
+
+    <section id="winnerSection" class="card winner-section" style="display:none;">
+      <h2>Ganador</h2>
+      <img id="winnerImg" class="winner-img" alt="Ganador" />
+      <h3 id="winnerName"></h3>
     </section>
   </main>
 
   <div id="footer-slot"></div>
 
   <script src="app.js"></script>
+  <script src="pokemonBattle.js"></script>
 </body>
 </html>
